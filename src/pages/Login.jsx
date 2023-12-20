@@ -37,9 +37,9 @@ const Login = () => {
             mounted.current && setIsSubmitting(false);
         }
     }
-    
+
     return (
-        <section className="bg-custom-gradient flex items-center justify-center h-screen font-custom">
+        <section className=" flex items-center justify-center mt-32">
             <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
                 <h1 className="mb-4 text-2xl font-bold text-gray-900 text-center">
                     Login
@@ -58,10 +58,10 @@ const Login = () => {
                             <input id="remember" aria-describedby="remember" type="checkbox" className="mr-2 w-4 h-4 border border-gray-300 rounded focus:ring-2 focus:ring-blue-400" required=""/>
                             <label htmlFor="remember" className="text-sm text-gray-500">Remember me</label>
                         </div>
-                        <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-700">Forgot password?</a>
+                        <a href="/forget-password" className="text-sm font-medium text-blue-600 hover:text-blue-700">Forgot password?</a>
                     </div>
                     <div>
-                        <button type="submit" disabled={isSubmitting} className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50">{isSubmitting ? "Logging in..." : "Login"}</button>
+                        <button type="submit" disabled={isSubmitting} className="w-full px-4 py-2 text-white bg-green rounded-md hover:bg-darkgreen focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50">{isSubmitting ? "Logging in..." : "Login"}</button>
                     </div>
                 </form>
             </div>

@@ -8,3 +8,45 @@ body {
 .image {
     width: 500px
 }
+
+/* Media Queries - Samira */
+
+@media only screen and (max-width: 768px) {
+    /* Adjust font size for smaller screens */
+    .text-lg {
+        font-size: 1rem;
+    }
+
+    /* Stacking buttons on smaller screens */
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Adjust table column widths for better readability on small screens */
+    .table-cell {
+        min-width: 100px;
+    }
+}
+
+@media (min-width: 768px) { /* Adjust the min-width */
+    .responsive-grid {
+        display: grid;
+        grid-template-columns: 2fr 0.25fr; /* This creates indicates the col's proportions */
+    }
+}
+
+@media (max-width: 768px) {
+    .dialog-container {
+      position: fixed; /* Stick to the bottom */
+      bottom: 0; /* Align to bottom */
+      left: 0; /* Align to left */
+      width: 100%; /* Full width */
+      border-top: 1px solid #ccc; /* Optional: adds a border top */
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+      z-index: 1000; /* Ensure it stays on top */
+    }
+}
+
+

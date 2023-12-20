@@ -23,7 +23,7 @@ const HomeIntro = () => {
         lightBlue: "#D6EBFF"
     };
   return (
-    <div id = "intro" className="mx-auto max-w-full px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32" style={{ backgroundColor: colors.paleGreen }}>
+    <div id = "intro" data-testid="intro" className="mx-auto max-w-full px-4 sm:px-6 lg:px-8 pb-16 pt-20 text-center lg:pt-32" style={{ backgroundColor: colors.paleGreen }}>
             <h1 className = "mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-[#1F2937] sm:text-7xl">
                 Embark on a journey toward robust{" "}
                 <span className="relative whitespace-nowrap text-[#5B8266]">
@@ -45,16 +45,17 @@ const HomeIntro = () => {
             {currentUser ? (
                     <button
                         onClick={handleLogout}
-                        className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition duration-300 ease-in-out"
-                        style={{ backgroundColor: colors.green, color: colors.lightBlue }}
+                        data-testid="home-logout"
+                        className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-darkgreen bg-green transition duration-300 ease-in-out"
+                       
                     >
-                        Sign Out
+                        Log Out
                     </button>
                 ) : (
                     <button
                         onClick={() => navigate("/register")}
-                        className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition duration-300 ease-in-out"
-                        style={{ backgroundColor: colors.green, color: colors.lightBlue }}
+                        data-testid="home-join"
+                        className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-darkgreen bg-green transition duration-300 ease-in-out"
                     >
                         Join Now
                     </button>

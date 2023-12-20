@@ -1,3 +1,4 @@
+# Wise Wallet Live Link: https://wise-wallet-h65n.onrender.com/
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -6,6 +7,19 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+- Ensure to do an `npm install` before `npm run dev` to run the application.
+  
+# Some Frontend Resources Used (mentioned in files and PR #120):
+### Discussed/confirmed general approval of use with Professor Avteniev 
+1. https://tailwindui.com/templates/salient
+2. https://flowbite.com/docs/components/progress/
+3. https://flowbite.com/docs/plugins/charts/ (Area, Pie, and Line Chart)
+4. https://blog.logrocket.com/using-react-toastify-style-toast-messages/
+5. https://flowbite.com/docs/components/card/
+6. https://tailwindui.com/components/application-ui/forms/form-layouts
+7. Color Palette: https://coolors.co/d3f6db-5b8266-182825-1f2937-d6ebff
+8. Backend Resource: https://www.emailjs.com/docs/examples/reactjs/
 
 # Product Requirements Document
 ## Problem
@@ -54,7 +68,7 @@ As a college student user
 * I want to be able to edit my account information so that I can update my information in the case of changes
 * I want to have the dashboard include: total spending, button recording entering spent, graph / visualization on spent, button for account information, button for updating/setting account information and changing budget/income so that I can navigate through the app easily and reach my goals
 * I want to set a savings goal, so that I can better budget what I can spend on
-* I want to be alerted through email when I spend 90% of my budget, so that I can refinance what I spend on
+* I want to be alerted through email when I spend 80% of my budget, so that I can refinance what I spend on
 * I want to see how much I spend in a month through categories so that I can track or update my budget
 * I want to manually enter my expenses and select a predetermined category so that I can track I am spending monthly
 * I want receive a monthly email summarizing my spending and progress so that I can visualize my expenses as a whole
@@ -70,7 +84,7 @@ Landing page:
 * Expense Tracker Page – Form to add new expenses (amount, date, category), and list of recent expenses.Budget Page – Form to set and update budgets, visual representation of the current budget.
 * Progress bar to indicate track how close user is to their budget
 * Insight Page – Monthly reports, expense analysis, and insights
-* Settings Page
+* Settings/Profile Page
 ### Backend (Express.js)
 * User Authentication – Handling signup, login, logout, and validation.
 * Expenses – Handles CRUD operations for expenses.
@@ -98,8 +112,6 @@ Phase 5: Launch application
 
 ### Development Protocol
 * Prior to each major product change, the team will gather to discuss the necessity of the change and the impact the change will have. The team will then incorporate the anticipated change in the timeline and adjust as necessary. 
-* For each product change, the Technical Writers will document the reason for the change through our working Google Document. 
-* To communicate the launch to the audience, the team will present biweekly updates and demos on larger updates to show E2E flow. At the start of development, we will have smoke tests.
-* The Technical Program Manager will work alongside the Product Manager to form a contingency plan if there are issues with the launch. The Product Manager will also develop formal OKRs to measure success prior to launch. 
-* All updates and manuals will be outlined on GitHub and the working Google Document.
-* The Product Marketing Manager/Presenter’s launch plans are halted due to awaiting the next steps from the instructor.
+* To communicate the launch to the audience, the team will present biweekly updates and demos on larger updates to show E2E flow. At the start of development, we will try to have smoke tests.
+* The Technical Program Manager will work alongside the Product Manager to form a contingency plan if there are issues with the launch.
+* All notes will be outlined on GitHub Projects or the working Google Document.

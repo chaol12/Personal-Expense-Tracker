@@ -6,9 +6,9 @@ import { NavLink } from 'react-router-dom';
 import { useAuth } from "../context/AuthContext";
 import { useLocation } from 'react-router-dom';
 
-function MobileNavLink({ to, children }) {
+function MobileNavLink({ to, children, testid }) {
   return (
-    <Popover.Button as={NavLink} to={to} className="block w-full p-2">
+    <Popover.Button as={NavLink} to={to} className="block w-full p-2" data-testid= {testid}>
       {children}
     </Popover.Button>
   )
@@ -55,6 +55,7 @@ function MobileNavigation() {
       <Popover.Button
         className="relative z-10 flex h-8 w-8 items-center justify-center ui-not-focus-visible:outline-none"
         aria-label="Toggle Navigation"
+        testid="toggle-button"
       >
         {({ open }) => <MobileNavIcon open={open} />}
       </Popover.Button>
@@ -84,9 +85,9 @@ function MobileNavigation() {
               as="div"
               className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
             >
-              <MobileNavLink to="/register">Sign up</MobileNavLink>
+              <MobileNavLink to="/register" testid="signup-m" >Sign Up</MobileNavLink>
               <hr className="m-2 border-slate-300/40" />
-              <MobileNavLink to="/login">Sign in</MobileNavLink>
+              <MobileNavLink to="/login" testid="signin-m">Sign In</MobileNavLink>
             </Popover.Panel>)
               :
             (<Popover.Panel
@@ -94,9 +95,10 @@ function MobileNavigation() {
               className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5"
             >
               <MobileNavLink to="/transtable">Dashboard</MobileNavLink>
+              <MobileNavLink to="/data">Data</MobileNavLink>
               <MobileNavLink to="/profile">Profile</MobileNavLink>
               <hr className="m-2 border-slate-300/40" />
-              <button className="block w-full p-2" onClick={handleLogout}>Log out</button>
+              <button className="block w-full p-2" data-testid="logout-m" onClick={handleLogout}>Log out</button>
             </Popover.Panel>)
           }
         </Transition.Child>
@@ -127,22 +129,23 @@ const NavBar = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <nav className="relative z-50 flex justify-between">
           <div className = "flex items-center md:gap-x-12">
-            <NavLink to="/" className="text-2xl font-semibold whitespace-nowrap">Wise Wallet</NavLink>
+            <NavLink to="/" data-testid="home" className="text-2xl font-semibold whitespace-nowrap">Wise Wallet</NavLink>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
               {!currentUser ? (
               <div className="hidden md:flex md:gap-x-6">
-                <NavLink to="/login">Sign in</NavLink>
-                <NavLink to="/register">Sign up</NavLink>
+                <NavLink to="/login" data-testid="signin">Sign In</NavLink>
+                <NavLink to="/register" data-testid="signup">Sign Up</NavLink>
               </div>) :
               (
               <div className="hidden md:flex md:gap-x-6">
-                <NavLink to="/transtable">Dashboard</NavLink>
-                <NavLink to="/profile">Profile</NavLink>
-                <button onClick={handleLogout}>Log out</button>
+                <NavLink to="/transtable" data-testid="dashboard">Dashboard</NavLink>
+                <NavLink to="/data"data-testid="data">Data</NavLink>
+                <NavLink to="/profile" data-testid="profile">Profile</NavLink>
+                <button onClick={handleLogout} data-testid="logout">Log Out</button>
               </div>
               )}
-              <div className="-mr-1 md:hidden">
+              <div className="-mr-1 md:hidden" data-testid="mobilNavigation">
                 <MobileNavigation />
               </div>
           </div>

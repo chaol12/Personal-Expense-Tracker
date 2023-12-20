@@ -1,19 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Contact from './ContactUs';
 
 const HomeFooter = () => {
   return (
-    <footer className="bg-[#D6EBFF]">
+    <footer className="bg-[#D6EBFF]" data-testid="footer">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="py-16 text-center">
+        <div className="pt-16 text-center">
             <span className="mx-auto h-10 w-auto font-medium text-darkblue">Wise Wallet</span>
             <nav className="mt-10 text-sm" aria-label="quick links">
                 <div className="my-1 flex justify-center gap-x-6">
                     <a className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-green hover:text-mint" href="#intro">Intro</a>
                     <a className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-green hover:text-mint" href="#features">Features</a>
+                    <a className="inline-block rounded-lg px-2 py-1 text-sm text-slate-700 hover:bg-green hover:text-mint" href="#contact">Contact Us ↓</a>
                 </div>
             </nav>
+            
         </div>
+        <Contact/>
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">
             <Link

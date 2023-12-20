@@ -8,6 +8,7 @@ module.exports = {
         '!**/vendor/**',
     ],
     moduleNameMapper: {
-      "\\.(css|less|scss)$": "identity-obj-proxy",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
     },
+    setupFiles: ["jest-canvas-mock", '<rootDir>/src/setupTests']
   };

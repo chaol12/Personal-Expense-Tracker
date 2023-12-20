@@ -4,30 +4,34 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Tab } from '@headlessui/react'
 import addImage from "../images/addImage.png"
+import background from "../images/background.png"
+import headshot from "../images/headshot.png"
+import alert from "../images/alert.png"
+import save from "../images/save.png"
 const features = [
     {
       title: 'Tracking Expenses',
       description:
         "Users can input and categorize their daily expenses manually.",
-      image: addImage,
+      image: headshot,
     },
     {
       title: 'Saving Goals',
       description:
         "The application will enable users to set saving goals and track their progress towards achieving them.",
-      image: addImage,
+      image: save,
     },
     {
       title: 'Reminder',
       description:
         "Users can set up an alert when they are about to exceed their budget.",
-      image: addImage,
+      image: alert,
     },
     {
-      title: 'Monthly reports and insights',
+      title: 'Monthly Reports and Insights',
       description:
         'The application will generate a report and visual graphs for users with a clear view of their spending.',
-      image: addImage,
+      image: background,
     },
   ]
 
@@ -35,14 +39,14 @@ const HomeGuide = () => {
     let [tabOrientation, setTabOrientation] = useState('horizontal')
     useEffect(() => {
         let lgMediaQuery = window.matchMedia('(min-width: 1024px)')
-    
+
         function onMediaQueryChange({ matches }) {
           setTabOrientation(matches ? 'vertical' : 'horizontal')
         }
-    
+
         onMediaQueryChange(lgMediaQuery)
         lgMediaQuery.addEventListener('change', onMediaQueryChange)
-    
+
         return () => {
           lgMediaQuery.removeEventListener('change', onMediaQueryChange)
         }
@@ -50,6 +54,7 @@ const HomeGuide = () => {
   return (
     <section
     id="features"
+    data-testid="features"
     aria-label="Features for running your books"
     className="relative overflow-hidden bg-[#182825] pb-28 pt-20 sm:py-32">
     {/*container*/}
@@ -72,14 +77,14 @@ const HomeGuide = () => {
                     <div
                       key={feature.title}
                       className={
-                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 ' + 
+                        'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6 ' +
                         (selectedIndex === featureIndex
                           ? 'bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10'
                           : 'hover:bg-white/10 lg:hover:bg-white/5')}>
                       <h3>
                         <Tab
                           className={
-                            'font-display text-lg ui-not-focus-visible:outline-none ' + 
+                            'font-display text-lg ui-not-focus-visible:outline-none ' +
                             (selectedIndex === featureIndex
                               ? 'text-blue-600 lg:text-white'
                               : 'text-blue-100 hover:text-white lg:text-white')}
@@ -90,7 +95,7 @@ const HomeGuide = () => {
                       </h3>
                       <p
                         className={
-                          'mt-2 hidden text-sm lg:block ' + 
+                          'mt-2 hidden text-sm lg:block ' +
                           (selectedIndex === featureIndex
                             ? 'text-white'
                             : 'text-blue-100 group-hover:text-white')}
